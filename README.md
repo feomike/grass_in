@@ -4,6 +4,17 @@ Grass In (short for input to grasshopper)
 
 This project is an input to the grasshopper project.  This code creates address point data based on the US Census Address Feature Class shape files ([found here] (ftp://ftp2.census.gov/geo/tiger/TIGER2014/ADDRFEAT/)). The point locations are used as sample data input into grasshopper.  the code works on stock census data.
 
+Dependencies
+------------
+Data
+- Census Placeec shapefiles (for interested states)
+- Census Addr_feat shapefiles (for interested counties)
+
+Software/Libraries
+- PostGIS (with access to an equidistant projection - this uses - epsg 3786)
+- Python
+- Psycopg2
+
 Workflow
 --------
 1). use [the prep_census_addrfeat.py]() code to download and prep two kinds of feature classes required for this project;
