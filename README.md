@@ -18,6 +18,7 @@ Software/Libraries
 Workflow
 --------
 1). use [the prep_census_addrfeat.py](https://github.com/feomike/grass_in/blob/master/prep_census_addrfeat.py) code to download and prep two kinds of feature classes required for this project;
+
 	- the [placeec](http://ftp2.census.gov/geo/tiger/TIGER2014/PLACEEC/) features provide the city names for a complete address
 	- the [address features](http://ftp2.census.gov/geo/tiger/TIGER2014/ADDRFEAT/) provide the linework with address ranges
 	
