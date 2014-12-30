@@ -18,8 +18,8 @@ Software/Libraries
 Workflow
 --------
 1). use [the prep_census_addrfeat.py](https://github.com/feomike/grass_in/blob/master/prep_census_addrfeat.py) code to download and prep two kinds of feature classes required for this project;
-	1.1 - the [placeec](http://ftp2.census.gov/geo/tiger/TIGER2014/PLACEEC/) features provide the city names for a complete address
-	1.2 - the [address features](http://ftp2.census.gov/geo/tiger/TIGER2014/ADDRFEAT/) provide the linework with address ranges
+	- the [placeec](http://ftp2.census.gov/geo/tiger/TIGER2014/PLACEEC/) features provide the city names for a complete address
+	- the [address features](http://ftp2.census.gov/geo/tiger/TIGER2014/ADDRFEAT/) provide the linework with address ranges
 	
 The [the prep_census_addrfeat.py](https://github.com/feomike/grass_in/blob/master/prep_census_addrfeat.py) code downloads (ftp get) an entire state of data.  All the addr_feat layers are based on county tiles, so this code cycles through a state and grabs each available county.  It then unzip's the download file, imports the resulting shapefile into postgis, adds the city and state field (and county as well) on to the newly imported addr_feat table.  Finally it populates the city, county and state fields.  The city field is populated from an intersect of the centroid of the roads with each polygon in the placeec table to acquire the city name for each place.  These fields are required to make a full example address (e.g. 123 Main St Newport RI 02840)
 	
