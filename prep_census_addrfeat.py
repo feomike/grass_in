@@ -132,119 +132,75 @@ def get_cty_feat(myST, myCty, myFeat):
 			print mySQL
 			theCur.execute(mySQL)
 			
+
+
 #return the state abbreviation given the state fips code
 def ret_st_abbr(myST):
-	st_abbr = "0"
-	if myST == "01":
-		st_abbr = "AL"
-	if myST == "02":
-		st_abbr = "AK"
-	if myST == "04":
-		st_abbr = "AZ"
-	if myST == "05":
-		st_abbr = "AR"
-	if myST == "06":
-		st_abbr = "CA"
-	if myST == "08":
-		st_abbr = "CO"
-	if myST == "09":
-		st_abbr = "CT"
-	if myST == "10":
-		st_abbr = "DE"
-	if myST == "11":
-		st_abbr = "DC"
-	if myST == "12":
-		st_abbr = "FL"
-	if myST == "13":
-		st_abbr = "GA"
-	if myST == "15":
-		st_abbr = "HI"
-	if myST == "19":
-		st_abbr = "IA"
-	if myST == "16":
-		st_abbr = "ID"
-	if myST == "17":
-		st_abbr = "IL"		
-	if myST == "18":
-		st_abbr = "IN"
-	if myST == "20":
-		st_abbr = "KS"		
-	if myST == "21":
-		st_abbr = "KY"
-	if myST == "22":
-		st_abbr = "LA"
-	if myST == "25":
-		st_abbr = "MA"
-	if myST == "24":
-		st_abbr = "MD"
-	if myST == "23":
-		st_abbr = "ME"
-	if myST == "26":
-		st_abbr = "MI"
-	if myST == "27":
-		st_abbr = "MN"
-	if myST == "29":
-		st_abbr = "MO"
-	if myST == "28":
-		st_abbr = "MS"
-	if myST == "30":
-		st_abbr = "MT"
-	if myST == "37":
-		st_abbr = "NC"
-	if myST == "38":
-		st_abbr = "ND"
-	if myST == "31":
-		st_abbr = "NE"
-	if myST == "33":
-		st_abbr = "NH"
-	if myST == "34":
-		st_abbr = "NJ"
-	if myST == "13":
-		st_abbr = "GA"
-	if myST == "35":
-		st_abbr = "NM"
-	if myST == "32":
-		st_abbr = "NV"
-	if myST == "36":
-		st_abbr = "NY"		
-	if myST == "39":
-		st_abbr = "OH"
-	if myST == "40":
-		st_abbr = "OK"
-	if myST == "41":
-		st_abbr = "OR"
-	if myST == "42":
-		st_abbr = "PA"
-	if myST == "44":
-		st_abbr = "RI"		
-	if myST == "45":
-		st_abbr = "SC"
-	if myST == "46":
-		st_abbr = "SD"
-	if myST == "47":
-		st_abbr = "TN"
-	if myST == "48":
-		st_abbr = "TX"
-	if myST == "49":
-		st_abbr = "UT"
-	if myST == "51":
-		st_abbr = "VA"
-	if myST == "13":
-		st_abbr = "GA"
-	if myST == "50":
-		st_abbr = "VT"
-	if myST == "53":
-		st_abbr = "WA"
-	if myST == "55":
-		st_abbr = "WI"
-	if myST == "54":
-		st_abbr = "WV"
-	if myST == "56":
-		st_abbr = "WY"
-	if st_abbr == "0":
-		theMsg = "You likely did not enter a valid two letter state abbreviation,"
-		theMsg = theMsg + "please run again"
-	return(st_abbr)
+    states = {
+        "01" : "AL",
+	"02" : "AK",
+	"04" : "AZ",
+	"05" : "AR",
+	"06" : "CA",
+	"08" : "CO",
+	"09" : "CT",
+	"10" : "DE",
+	"11" : "DC",
+	"12" : "FL",
+	"13" : "GA",
+	"15" : "HI",
+	"19" : "IA",
+	"16" : "ID",
+	"17" : "IL",		
+	"18" : "IN",
+	"20" : "KS",		
+	"21" : "KY",
+	"22" : "LA",
+	"25" : "MA",
+	"24" : "MD",
+	"23" : "ME",
+	"26" : "MI",
+	"27" : "MN",
+	"29" : "MO",
+	"28" : "MS",
+	"30" : "MT",
+	"37" : "NC",
+	"38" : "ND",
+	"31" : "NE",
+	"33" : "NH",
+	"34" : "NJ",
+	"13" : "GA",
+	"35" : "NM",
+	"32" : "NV",
+	"36" : "NY",		
+	"39" : "OH",
+	"40" : "OK",
+	"41" : "OR",
+	"42" : "PA",
+	"44" : "RI",		
+	"45" : "SC",
+	"46" : "SD",
+	"47" : "TN",
+	"48" : "TX",
+	"49" : "UT",
+	"51" : "VA",
+	"13" : "GA",
+	"50" : "VT",
+	"53" : "WA",
+	"55" : "WI",
+	"54" : "WV",
+	"56" : "WY"
+    }
+    
+    try:
+        state = states[myST]
+    except:
+        theMsg = "You likely did not enter a valid two letter state abbreviation, "
+        theMsg = theMsg + "please run again."
+        print theMsg
+        state = "0"
+
+    return state
 
 
 
